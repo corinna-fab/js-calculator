@@ -78,6 +78,9 @@ const calculate = function calculate(input) {
   else if(input.operation === 'divide' || input.operation === '/') {
     return divide(input);
   }
+  else if(input.operation === 'modulo' || input.operation === '%') {
+    return modulo(input);
+  }
 }
 
 const add = function add(input) {
@@ -94,6 +97,10 @@ const multiply = function multiply(input) {
 
 const divide = function divide(input) {
   console.log(exampleAdditionInput.num1 / exampleAdditionInput.num2);
+}
+
+const modulo = function modulo(input) {
+  console.log(exampleAdditionInput.num1 % exampleAdditionInput.num2);
 }
 
 // check if the input is invalid. 
