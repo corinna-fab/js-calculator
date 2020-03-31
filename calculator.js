@@ -58,7 +58,13 @@ const exampleOperatorCheck = {
   operation: 'wat',
 }
 
-const math_options = ["add", "+", "subtract", "-", "multiply", "*", "divide", "/", "exponentiation", "**", "modulo", "%"]
+const exampleZeroCheck = {
+  num1: 3,
+  num2: 0,
+  operation: '/',
+}
+
+const math_options = ['add', '+', 'subtract', '-', 'multiply', '*', 'divide', '/', 'exponentiation', '**', 'modulo', '%']
 
 // The program should have support for these four operations: addition, subtraction, multiplication, and division.
 // The program should accept both the name and the symbol for each possible operation.
@@ -76,42 +82,51 @@ const calculate = function calculate(input) {
     return multiply(input);
   }
   else if(input.operation === 'divide' || input.operation === '/') {
-    return divide(input);
+    //TASKED WITH:The program handles divide when attempting to divide by zero
+    if(input.num2 === 0) {
+      console.log('Error: Cannot divide by 0.')
+    }
+    else {
+      return divide(input);
+    }
   }
   else if(input.operation === 'modulo' || input.operation === '%') {
     return modulo(input);
   }
 }
 
+//TASKED WITH: The program adds numbers accurately with both add and +
 const add = (input) => { console.log(exampleAdditionInput.num1 + exampleAdditionInput.num2); }
 
+//TASKED WITH:The program subtracts numbers accurately with both subtract and -
 const subtract = (input) => { console.log(exampleAdditionInput.num1 - exampleAdditionInput.num2); }
 
+//TASKED WITH:The program adds numbers accurately with both multiply and *
 const multiply = (input) => { console.log(exampleAdditionInput.num1 * exampleAdditionInput.num2); }
 
+//TASKED WITH:The program adds numbers accurately with both divide and /
 const divide = (input) => { console.log(exampleAdditionInput.num1 / exampleAdditionInput.num2); }
 
+//TASKED WITH: The program also needs to handle erroneous operators
 const modulo = (input) => { console.log(exampleAdditionInput.num1 % exampleAdditionInput.num2); }
 
-// check if the input is invalid. 
-//What happens if the user input is nil (i.e., the user just pressed enter)? What happens if the user tries to add hotdog to elephant? What if the user input is hotdog for an operator?
-// if the input is invalid, output a message to the command line that informs the user that the input was invalid
 
-//check for math operators
-//check for numbers in numbers
+//TASKED WITH:The program handles erroneous input. For example the user might enter clown when asked to enter a number
+//NEEDS: check for given math operator in math operators
+//NEEDS: check for given number in numbers
 
 const confirmOperator = function confirmOperator(input){
   if(!math_options.includes(input.operation)) {
-    console.log("Error: Please provide a valid operation. \n Provided:", input.operation)
+    console.log('Error: Please provide a valid operation. \n Provided:', input.operation)
   }
 }
 
 const confirmNumber = function confirmNumber(input) {
   if(isNaN(input.num1)) {
-    console.log("Error: Please provide a valid number. \n Provided:", input.num1)
+    console.log('Error: Please provide a valid number. \n Provided:', input.num1)
   }
   if(isNaN(input.num2)) {
-    console.log("Error: Please provide a valid number. \n Provided:", input.num2)
+    console.log('Error: Please provide a valid number. \n Provided:', input.num2)
   }
 }
 
@@ -126,6 +141,7 @@ calculate(exampleDivideInput)
 calculate(exampleDivide2Input)
 calculate(exampleNumberCheck)
 calculate(exampleOperatorCheck)
+calculate(exampleZeroCheck)
 
 // const numberTest = {
 //   num1: 'dog',
