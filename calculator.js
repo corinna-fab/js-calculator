@@ -83,25 +83,15 @@ const calculate = function calculate(input) {
   }
 }
 
-const add = function add(input) {
-  console.log(exampleAdditionInput.num1 + exampleAdditionInput.num2);
-}
+const add = (input) => { console.log(exampleAdditionInput.num1 + exampleAdditionInput.num2); }
 
-const subtract = function subtract(input) {
-  console.log(exampleAdditionInput.num1 - exampleAdditionInput.num2);
-}
+const subtract = (input) => { console.log(exampleAdditionInput.num1 - exampleAdditionInput.num2); }
 
-const multiply = function multiply(input) {
-  console.log(exampleAdditionInput.num1 * exampleAdditionInput.num2);
-}
+const multiply = (input) => { console.log(exampleAdditionInput.num1 * exampleAdditionInput.num2); }
 
-const divide = function divide(input) {
-  console.log(exampleAdditionInput.num1 / exampleAdditionInput.num2);
-}
+const divide = (input) => { console.log(exampleAdditionInput.num1 / exampleAdditionInput.num2); }
 
-const modulo = function modulo(input) {
-  console.log(exampleAdditionInput.num1 % exampleAdditionInput.num2);
-}
+const modulo = (input) => { console.log(exampleAdditionInput.num1 % exampleAdditionInput.num2); }
 
 // check if the input is invalid. 
 //What happens if the user input is nil (i.e., the user just pressed enter)? What happens if the user tries to add hotdog to elephant? What if the user input is hotdog for an operator?
